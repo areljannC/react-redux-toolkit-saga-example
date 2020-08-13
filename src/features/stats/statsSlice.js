@@ -7,6 +7,7 @@ const statsSlice = createSlice({
     incrementWins: (state) => {
       state.wins++
     },
+    incrementWinsAsync: (state) => {},
     decrementWins: (state) => {
       state.wins--
     },
@@ -21,6 +22,7 @@ const statsSlice = createSlice({
 
 export const {
   incrementWins,
+  incrementWinsAsync,
   decrementWins,
   incrementLosses,
   decrementLosses

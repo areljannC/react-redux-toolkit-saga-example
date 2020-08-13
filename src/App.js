@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { incrementWins, incrementLosses } from './features/stats'
+import { incrementWinsAsync, incrementLosses } from './features/stats'
 
 // Component
-const App = ({ wins, losses, incrementWins, incrementLosses }) => (
+const App = ({ wins, losses, incrementWinsAsync, incrementLosses }) => (
   <div
     style={{
       width: `100vw`,
@@ -17,8 +17,8 @@ const App = ({ wins, losses, incrementWins, incrementLosses }) => (
   >
     <p>Wins: {wins}</p>
     <p>Losses: {losses}</p>
-    <button onClick={incrementWins}>Increment Wins</button>
-    <button onClick={incrementLosses}>Increment Losses</button>
+    <button onClick={() => incrementWinsAsync()}>Increment Wins</button>
+    <button onClick={() => incrementLosses()}>Increment Losses</button>
   </div>
 )
 
@@ -37,7 +37,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  incrementWins,
+  incrementWinsAsync,
   incrementLosses
 }
 
